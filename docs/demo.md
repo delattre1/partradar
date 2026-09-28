@@ -6,4 +6,28 @@ The checked demo candidate is [Optocam Zero](https://github.com/dorukkumkumoglu/
 
 The [research input fixture](../examples/pi-zero-camera-research.json) can regenerate the [demo outputs](../examples/demo-output/REQ-0042/research.yaml) without network access. These files are evidence-backed examples of the artifact contract. They are not a captured OpenClaw run or proof of engineering-team acceptance.
 
-Record and publish the real demo video after the live phone, research, and local work-order path works. Add its YouTube ID to the Agent Index metadata. Capture at least one real screenshot of PartRadar's conversation or work order under `docs/assets/`; link the public image URL in the Index listing. Do not substitute this fixture for a real screenshot.
+## Release capture checklist
+
+Capture a **real** conversation screenshot showing the user request, PartRadar's `ADAPTABLE` result, the candidate URL, license, editable source, and `DesignRequired`/engineering order. Frame it so a viewer understands the search-before-design result without reading the README. Save a redacted capture under `docs/assets/` and publish it at a stable HTTPS URL. The architecture diagram and the fixture above are supporting material, not substitutes for this screenshot.
+
+Record a 60–90 second video from the working agent:
+
+| Time | Show |
+| --- | --- |
+| 0–10s | The need: “We need a printable enclosure.” |
+| 10–25s | PartRadar checks whether an existing design can be reused. |
+| 25–45s | Actual source, license, and editable-file research. |
+| 45–60s | The real `ADAPTABLE` result and camera mismatch. |
+| 60–75s | `DesignRequired` and the local `OPEN` engineering order. |
+| 75–90s | Show the local work order prepared for ClawCAD engineering review; close with “PartRadar searches. ClawCAD designs.” |
+
+If the live result differs from the fixture, show the live result honestly. ClawCAD footage is optional and must be clearly identified as a separate application. Remove personal phone numbers, tokens, and private account details from the recording. Publish the video before registering its URL.
+
+Once the real media is public, register it with the current Plow CLI:
+
+```sh
+plow-agents image set partradar --screenshot https://PUBLIC_URL/partradar-demo.png
+plow-agents image set partradar --video '{"provider":"youtube","id":"VIDEO_ID","title":"PartRadar demo"}'
+```
+
+Replace the placeholders with the actual public image URL and YouTube ID. Do not run these commands with placeholders.

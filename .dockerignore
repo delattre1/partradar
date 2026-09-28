@@ -3,6 +3,7 @@ plow-credentials
 .env
 .env.*
 artifacts
+partradar-image.digest
 tests
 examples
 docs

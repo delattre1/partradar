@@ -83,6 +83,15 @@ class PartRadarTests(unittest.TestCase):
         compose = (ROOT / "compose.yml").read_text()
         self.assertIn("AGENT_ID: ${AGENT_ID:-}", compose)
         self.assertIn("state:/var/lib/plow", compose)
+        self.assertIn("127.0.0.1:3001:3001", compose)
+        self.assertIn("dev-dashboard:", compose)
+        self.assertIn("network_mode: service:agent", compose)
+        self.assertIn("./dev/Caddyfile:/etc/caddy/Caddyfile:ro", compose)
+        self.assertNotIn("3000:3000", compose)
+        caddyfile = (ROOT / "dev" / "Caddyfile").read_text()
+        self.assertIn("respond @foreign_origin 403", caddyfile)
+        self.assertIn("reverse_proxy 127.0.0.1:3000", caddyfile)
+        self.assertIn("request_header -X-Plow-*", caddyfile)
 
 
 if __name__ == "__main__":

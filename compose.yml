@@ -10,8 +10,22 @@ services:
       AGENT_NAME: PartRadar
       AGENT_BLURB: Search first. Design only when necessary.
       AGENT_RUNTIME: OpenClaw
+    # This local Podman bridge's embedded resolver fails external lookups.
+    # Override DNS for the local agent; cloud deployments do not use Compose.
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    ports:
+      - "127.0.0.1:3001:3001"
     volumes:
       - state:/var/lib/plow
     stop_grace_period: 35s
+  # Local-only equivalent of Plow's agent-web proxy. Port 3000 stays private.
+  dev-dashboard:
+    image: caddy:2@sha256:14a9c00d4e833ebc2b65d36515b37bde3b73f0b323a2663aaafc88953d8c4e3f
+    network_mode: service:agent
+    depends_on: [agent]
+    volumes:
+      - ./dev/Caddyfile:/etc/caddy/Caddyfile:ro
 volumes:
   state:
