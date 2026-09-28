@@ -1,0 +1,17 @@
+services:
+  agent:
+    build:
+      context: .
+      args:
+        AGENT_ID: ${AGENT_ID:-}
+    env_file: ./plow-credentials
+    environment:
+      AGENT_ID: ${AGENT_ID:-}
+      AGENT_NAME: PartRadar
+      AGENT_BLURB: Search first. Design only when necessary.
+      AGENT_RUNTIME: OpenClaw
+    volumes:
+      - state:/var/lib/plow
+    stop_grace_period: 35s
+volumes:
+  state:

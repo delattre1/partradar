@@ -1,0 +1,9 @@
+{
+  "event": "DesignRequired",
+  "request_id": "REQ-0042",
+  "research_status": "ADAPTABLE",
+  "object": "Raspberry Pi Zero camera enclosure",
+  "manufacturing": "FDM",
+  "reason": "EXISTING_DESIGN_REQUIRES_MODIFICATION",
+  "research_artifact": "REQ-0042"
+}

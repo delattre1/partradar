@@ -1,0 +1,11 @@
+.git
+plow-credentials
+.env
+.env.*
+artifacts
+tests
+examples
+docs
+README.md
+__pycache__
+*.pyc

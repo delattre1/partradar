@@ -1,0 +1,36 @@
+{
+  "type": "EngineeringWorkOrder",
+  "request_id": "REQ-0042",
+  "status": "OPEN",
+  "team": "engineering",
+  "downstream_application": "ClawCAD",
+  "research_status": "ADAPTABLE",
+  "requested_action": "REVIEW_ADAPTATION",
+  "object": "Raspberry Pi Zero camera enclosure",
+  "requirements": {
+    "board": "Raspberry Pi Zero",
+    "camera": "RPIZ CAM 5MP 120",
+    "manufacturing": "FDM"
+  },
+  "reason": "The closest confirmed open design targets different named hardware; ClawCAD must verify fit and assess modification.",
+  "closest_candidate": {
+    "name": "Optocam Zero",
+    "url": "https://github.com/dorukkumkumoglu/optocamzero/tree/d9772fbc432eae7b8a84007a5d435ba0c5c10b62",
+    "license": {
+      "name": "CC-BY-SA-4.0",
+      "url": "https://github.com/dorukkumkumoglu/optocamzero/blob/d9772fbc432eae7b8a84007a5d435ba0c5c10b62/LICENSE",
+      "classification": "OPEN_SOURCE_CONFIRMED"
+    },
+    "source_files": [
+      {
+        "name": "optocamzero_V1.0.step",
+        "url": "https://github.com/dorukkumkumoglu/optocamzero/blob/d9772fbc432eae7b8a84007a5d435ba0c5c10b62/hardware/cad/optocamzero_V1.0.step"
+      }
+    ]
+  },
+  "unknowns": [
+    "Exact RPIZ CAM 5MP 120 identity, outline, lens position, and mounting dimensions were not established"
+  ],
+  "research_artifact": "REQ-0042/research.yaml",
+  "design_required_event": "REQ-0042/design-required.json"
+}

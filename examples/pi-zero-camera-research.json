@@ -1,0 +1,96 @@
+{
+  "request_id": "REQ-0042",
+  "status": "ADAPTABLE",
+  "request": {
+    "object": "Raspberry Pi Zero camera enclosure",
+    "requirements": {
+      "board": "Raspberry Pi Zero",
+      "camera": "RPIZ CAM 5MP 120",
+      "manufacturing": "FDM"
+    }
+  },
+  "search": {
+    "queries": [
+      "Raspberry Pi Zero camera enclosure STEP CAD open source GitHub license",
+      "RPIZ CAM 5MP 120 camera dimensions",
+      "Raspberry Pi Zero case camera OpenSCAD github license"
+    ],
+    "sources": [
+      "https://github.com/dorukkumkumoglu/optocamzero",
+      "https://github.com/penk/ruha.camera",
+      "https://github.com/paul1522/OpenSCAD-Projects"
+    ]
+  },
+  "candidates": [
+    {
+      "id": "optocam-zero",
+      "name": "Optocam Zero",
+      "description": "FDM printable Raspberry Pi Zero 2 W camera project with STEP source and a Camera Module 3 bill of materials.",
+      "source": {
+        "provider": "github",
+        "url": "https://github.com/dorukkumkumoglu/optocamzero/tree/d9772fbc432eae7b8a84007a5d435ba0c5c10b62"
+      },
+      "license": {
+        "name": "CC-BY-SA-4.0",
+        "url": "https://github.com/dorukkumkumoglu/optocamzero/blob/d9772fbc432eae7b8a84007a5d435ba0c5c10b62/LICENSE",
+        "classification": "OPEN_SOURCE_CONFIRMED"
+      },
+      "print_files": [
+        {
+          "name": "enclosure_v1.0.stl",
+          "url": "https://github.com/dorukkumkumoglu/optocamzero/blob/d9772fbc432eae7b8a84007a5d435ba0c5c10b62/hardware/stls/enclosure_v1.0.stl"
+        },
+        {
+          "name": "optocamzero_v1.0_bambustudio.3mf",
+          "url": "https://github.com/dorukkumkumoglu/optocamzero/blob/d9772fbc432eae7b8a84007a5d435ba0c5c10b62/hardware/print-ready/optocamzero_v1.0_bambustudio.3mf"
+        }
+      ],
+      "source_files": [
+        {
+          "name": "optocamzero_V1.0.step",
+          "url": "https://github.com/dorukkumkumoglu/optocamzero/blob/d9772fbc432eae7b8a84007a5d435ba0c5c10b62/hardware/cad/optocamzero_V1.0.step"
+        }
+      ],
+      "documentation": [
+        {
+          "name": "hardware README",
+          "url": "https://github.com/dorukkumkumoglu/optocamzero/blob/d9772fbc432eae7b8a84007a5d435ba0c5c10b62/hardware/README.md"
+        },
+        {
+          "name": "bill of materials",
+          "url": "https://github.com/dorukkumkumoglu/optocamzero/blob/d9772fbc432eae7b8a84007a5d435ba0c5c10b62/hardware/BOM.md"
+        }
+      ],
+      "manufacturing": "FDM (PETG)",
+      "evidence": [
+        {
+          "claim": "BOM names Raspberry Pi Zero 2 W and Raspberry Pi Camera Module 3, which differ from the requested identifiers.",
+          "url": "https://github.com/dorukkumkumoglu/optocamzero/blob/d9772fbc432eae7b8a84007a5d435ba0c5c10b62/hardware/BOM.md"
+        },
+        {
+          "claim": "Hardware README documents FDM printing in PETG.",
+          "url": "https://github.com/dorukkumkumoglu/optocamzero/blob/d9772fbc432eae7b8a84007a5d435ba0c5c10b62/hardware/README.md"
+        },
+        {
+          "claim": "Repository contains an enclosure STL, print-ready 3MF, and STEP source.",
+          "url": "https://github.com/dorukkumkumoglu/optocamzero/tree/d9772fbc432eae7b8a84007a5d435ba0c5c10b62/hardware"
+        }
+      ]
+    }
+  ],
+  "selected_candidate_id": "optocam-zero",
+  "evaluation": {
+    "matches": [
+      "Raspberry Pi Zero family enclosure",
+      "FDM print files and STEP source are available",
+      "CC BY-SA 4.0 license explicitly permits adaptation"
+    ],
+    "mismatches": [
+      "Source BOM specifies Raspberry Pi Zero 2 W and Camera Module 3 instead of the requested Raspberry Pi Zero and RPIZ CAM 5MP 120"
+    ],
+    "unknowns": [
+      "Exact RPIZ CAM 5MP 120 identity, outline, lens position, and mounting dimensions were not established"
+    ],
+    "reason": "The closest confirmed open design targets different named hardware; ClawCAD must verify fit and assess modification."
+  }
+}
